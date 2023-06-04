@@ -1,7 +1,7 @@
 accelerator:
   displayName: Surfers Python-Flask Accelerator
   description: Contains the Surfers system python-flask scafolding for a new module
-  iconUrl: https://raw.githubusercontent.com/davlloyd/surfers-flask-accelerator/main/main/static/images/surfing-web-icon.png
+  iconUrl: https://raw.githubusercontent.com/surfers-lookout/surfers-flask-accelerator/main/main/static/images/surfing-web-icon.png
   tags:
   - surferslookout
   - python
@@ -92,7 +92,7 @@ engine:
     - type: ReplaceText
       condition: "#bsGitRepository != null"
       substitutions:
-      - text: "https://github.com/davlloyd/surfers-flask-accelerator"
+      - text: "https://github.com/surfers-lookout/surfers-flask-accelerator"
         with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
     - type: ReplaceText
       condition: "#gitopsEnabled"
@@ -129,3 +129,13 @@ engine:
         with: "#artifactId"
       - text: surfers-flask-accelerator
         with: "#artifactId"
+
+  - include: [ "techdocs_publish.sh" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: surfersflaskaccelerator
+        with: "#artifactId"
+      - text: surfers-flask-accelerator
+        with: "#artifactId"
+        

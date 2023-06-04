@@ -14,5 +14,5 @@ e.g. **export COLOR=red** will display a red circle as root page
 - Functional and Unit testing with [Pytest](https://docs.pytest.org)
 
 ## Platform
-- [Tanzu Application Platform](https://tanzu.vmware.com/application-platform) 1.3+
+- [Tanzu Application Platform](https://tanzu.vmware.com/application-platform) 1.5+
 
