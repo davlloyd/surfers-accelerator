@@ -1,7 +1,7 @@
 accelerator:
   displayName: Surfers Python-Flask Accelerator
   description: Contains the Surfers system python-flask scafolding for a new module
-  iconUrl: https://raw.githubusercontent.com/surfers-lookout/surfers-flask-accelerator/main/main/static/images/surfing-web-icon.png
+  iconUrl: https://raw.githubusercontent.com/davlloyd/surfers-flask-accelerator/main/main/static/images/surfing-web-icon.png
   tags:
   - surferslookout
   - python
@@ -51,7 +51,7 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", "docs/*.md", ".vscode/*.json" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", "docs/*.md", ".vscode/*.json", "techdocs_publish.sh" ]
 
   - include: [  "docs/*.md" ]
     chain:
@@ -92,7 +92,7 @@ engine:
     - type: ReplaceText
       condition: "#bsGitRepository != null"
       substitutions:
-      - text: "https://github.com/surfers-lookout/surfers-flask-accelerator"
+      - text: "https://github.com/davlloyd/surfers-flask-accelerator"
         with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
     - type: ReplaceText
       condition: "#gitopsEnabled"
@@ -138,4 +138,3 @@ engine:
         with: "#artifactId"
       - text: surfers-flask-accelerator
         with: "#artifactId"
-        
