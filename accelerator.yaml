@@ -111,6 +111,11 @@ engine:
         with: "': ' + #artifactId.toLowerCase()"
       - text: "value: blue"
         with: "'value: ' + #pageColor"
+    - merge:
+        - type: InvokeFragment
+          reference: tap-workload
+        - include: [ "**" ]
+      onConflict: UseFirst
 
   - include: [ "README.md" ]
     chain:
