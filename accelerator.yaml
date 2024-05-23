@@ -52,7 +52,10 @@ accelerator:
     defaultValue: ''
     dependsOn:
       name: gitopsEnabled
-    
+
+  imports:
+    - name: tap-workload
+
 engine:
   merge:
   - include: [ "**/*" ]
