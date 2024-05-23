@@ -4,3 +4,4 @@ mysqldbmodel
 python-dotenv
 pyservicebinding
 pytest
+opentelemetry-distro

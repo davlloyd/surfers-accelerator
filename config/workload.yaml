@@ -17,9 +17,7 @@ spec:
   - name: testing_pipeline_matching_labels
     value:
       apps.tanzu.vmware.com/language: python
-  - name: testing_pipeline_matching_labels
-    value:
-      apps.tanzu.vmware.com/language: python
+
   - name: git_user_email
     value: gitopsemailaddress
   - name: git_user_name
@@ -36,7 +34,7 @@ spec:
       autoscaling.knative.dev/target: "60"
   source:
     git:
-      url: https://github.com/davlloyd/surfers-flask-accelerator
+      url: <https URL for your generated project's Git repository>
       ref:
         branch: main
   #serviceClaims:

@@ -13,6 +13,11 @@ accelerator:
     label: Prefix for the container image repository
     defaultValue: docker.io/<project>
     required: true
+  - name: systemName
+    inputType: text
+    label: Name of system component is part of
+    defaultValue: surferslookout
+    required: true
   - name: pageColor
     label: Initial color displayed by the root web page
     inputType: radio
@@ -90,11 +95,6 @@ engine:
   - include: [ "config/*.yaml" ]
     chain:
     - type: ReplaceText
-      condition: "#bsGitRepository != null"
-      substitutions:
-      - text: "https://github.com/davlloyd/surfers-flask-accelerator"
-        with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
-    - type: ReplaceText
       condition: "#gitopsEnabled"
       substitutions:
       - text: "gitopsaccountname"
@@ -103,6 +103,8 @@ engine:
         with: "#gitopsEmail.toLowerCase()"
     - type: ReplaceText
       substitutions:
+      - text: "surferslookout"
+        with: "#systemName.toLowerCase()"
       - text: ": surfersflaskaccelerator"
         with: "': ' + #artifactId.toLowerCase()"
       - text: ": surfers-flask-accelerator"
